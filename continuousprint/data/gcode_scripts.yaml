@@ -62,3 +62,21 @@ GScript:
       G90 ; back to absolute positioning
       M104 S0; Set Hot-end to 0C (off)
       M140 S0; Set bed to 0C (off)
+  - name: "PrusaMINI+ PrintShift"
+    description: >
+      The PrintShift on the PrusaMINI+
+    version: 0.0.1
+    gcode: |
+      M104 S0 ; Set Hot-end temp to "Off"
+      M140 S0 ; Set bed temp to "Off"
+      G21 ; Set units to mm
+      G90 ; Set absolute positioning
+      M17 ; Enable steppers
+      G0 Y-3 Z180 ; Set the bed up to engage the coveyer
+      G4 S60 ; Dwell for 60 seconds
+      G4 ; Dwell for everything to move
+      G0 Z181 ; Set the bed (Z) all the way up to engage the microswitch that turns "on" the motor
+      G4 S30 ; Dwell for 30 seconds
+      G0 Z10 ;
+      G4 ; Dwell for everything to move
+      M18 ; Disable steppers

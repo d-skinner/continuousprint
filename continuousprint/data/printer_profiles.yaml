@@ -32,3 +32,14 @@ PrinterProfile:
     defaults:
       clearBed: "Pause"
       finished: "Generic Off"
+  - name: "PrusaMINI+ PrintShift"
+    make: "Prusa3D"
+    model: "PrusaMINI+ PrintShift"
+    width: 180
+    depth: 180
+    height: 180
+    formFactor: "rectangular"
+    selfClearing: true
+    defaults:
+      clearBed: "PrusaMINI+ PrintShift"
+      finished: "Generic Off"
